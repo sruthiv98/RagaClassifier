@@ -43,4 +43,4 @@ Calculating n-grams is useful in the scope of our project because it is very hel
  After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
 
 Thaat To Scale:
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/sruthiv98/RagaClassifier/images/thaattoscale.jpg "Some Text Goes Here")
