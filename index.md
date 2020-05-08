@@ -27,6 +27,14 @@ In Indian classical music, each artist plays in a specific sruthi, which is a pi
 
 # Analysis
 
+![Thaat To Scale](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg)
+
+Format: ![Thaat To Scale](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg)
+
+Thaat To Scale:
+![alt text](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg "Some Text Goes Here")
+
+
 Our analysis attempts to show the quantitative differences between each of the 10 ragas with starting ideas on how we may go on to use these differences when building a classifier. We aim to do this in two parts: the first will focus on the frequency of notes in each raga and will discuss whether these note frequencies are expected given the raga or whether it is not. 
 
 The second part of our analysis will look at a sequence of notes taken from the clearest clip from each raga and will look at the most frequently occurring bigrams and trigrams. We will then compare these bigram and trigram frequencies with phrases that we know to be common in each raga and assess the accuracy of this quantification method. 
@@ -42,5 +50,4 @@ Once we had our sequence of notes, we removed consecutive duplicates to prevent 
 Calculating n-grams is useful in the scope of our project because it is very helpful in the quantification of ragas. Every raga has phrases (a sequence of notes) that form the identity of the raga. It is often after hearing one of these phrases that a listener is able to identify the raga of a song. Doing an n-gram analysis of a note sequence is a computational replication of the raga-identification method that advanced listeners use. 
  After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
 
-Thaat To Scale:
-![alt text](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg "Some Text Goes Here")
+
