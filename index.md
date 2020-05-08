@@ -26,9 +26,13 @@ In Indian classical music, each artist plays in a specific sruthi, which is a pi
 
 
 # Analysis
-Thaat To Scale: ![Thaat To Scale](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg)
+Thaat To Scale: 
 
-Format: ![Thaat To Scale](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg)
+![Thaat To Scale](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg)
+
+Format: 
+
+![Thaat To Scale](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg)
 
 ![Fortmat 2](https://github.com/sruthiv98/RagaClassifier/blob/gh-pages/images/thaattoscale.jpeg "Some Text Goes Here")
 
