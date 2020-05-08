@@ -42,8 +42,5 @@ Once we had our sequence of notes, we removed consecutive duplicates to prevent 
 Calculating n-grams is useful in the scope of our project because it is very helpful in the quantification of ragas. Every raga has phrases (a sequence of notes) that form the identity of the raga. It is often after hearing one of these phrases that a listener is able to identify the raga of a song. Doing an n-gram analysis of a note sequence is a computational replication of the raga-identification method that advanced listeners use. 
  After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
 
-
-# Visualizaiton 1
-
-
-# Visualization 2
+Thaat To Scale:
+![alt text](https://github.com/sruthiv98/RagaClassifier/images/thaattoscale.jpg "Some Text Goes Here")
