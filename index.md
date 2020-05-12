@@ -25,7 +25,7 @@ Once we narrowed down which ragas we would include in our analysis, we picked so
 In Indian classical music, each artist plays in a specific sruthi, which is a pitch that the first note in the scale of the raga (sa) is played from. To make sure we could correctly analyze the difference between multiple songs, we identified what pitch each song was in and shifted the pitch of every song to be in C Major. We also chunked each of our songs to be 45 seconds in length so that later in our analysis, we could more accurately extract notes from them. We then loaded this information (encoded as an audio time-series array) into a csv for further use.
 
 
-# Analysis
+# Analysis : Background
 Thaat To Scale: 
 
 ![Thaat To Scale](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/thaattoscale.jpeg)
@@ -46,5 +46,18 @@ After normalizing the pitches so all of the audio clips started in C, we extract
 Once we had our sequence of notes, we removed consecutive duplicates to prevent error while calculating n-grams. This was specifically to prevent n-gram calculation from including consecutive notes because this does not provide very much information about the patterns within the raga. For example, an artist holding the note sa (C) would result in many of the most frequent bi-grams being just a note that was consecutively held. 
 Calculating n-grams is useful in the scope of our project because it is very helpful in the quantification of ragas. Every raga has phrases (a sequence of notes) that form the identity of the raga. It is often after hearing one of these phrases that a listener is able to identify the raga of a song. Doing an n-gram analysis of a note sequence is a computational replication of the raga-identification method that advanced listeners use. 
  After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
+
+
+# Analysis: Ragas
+
+## Raga Asavari (Hindustani) / Natabhairavi (Carnatic)
+
+![Asavari Frequency](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari2.png)
+![Asavari Bi/Trigram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari1.png)
+![Asavari Chromagram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari1.png)
+
+The Asavari scale in swaras (Indian classical notes) is S R g M P d n S. In Western classical notes, in the C Major pitch, this would be C D D# F G G# A# C. As can be seen by our frequency visualization, the note that occurs with the highest frequency is G#, or the swara dha. This fits with our understanding of the raga because the main note (known as the vadi) of Asavari is dha (G#). 
+
+Looking at the frequencies of the bigrams and trigrams, we can observe whether they match the pakad, or phrases that capture the nature of the raga. If we observe the top bigrams and trigrams, we can see the prominence of D, C, D which translates to the swaras ri, sa, ri, which is an important phrase in this raga. 
 
 
