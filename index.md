@@ -54,7 +54,7 @@ Calculating n-grams is useful in the scope of our project because it is very hel
 
 ![Asavari Frequency](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari2.png)
 ![Asavari Bi/Trigram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari1.png)
-![Asavari Chromagram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari1.png)
+![Asavari Chromagram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari3.png)
 
 The Asavari scale in swaras (Indian classical notes) is S R g M P d n S. In Western classical notes, in the C Major pitch, this would be C D D# F G G# A# C. As can be seen by our frequency visualization, the note that occurs with the highest frequency is G#, or the swara dha. This fits with our understanding of the raga because the main note (known as the vadi) of Asavari is dha (G#). 
 
