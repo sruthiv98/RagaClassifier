@@ -52,7 +52,7 @@ Calculating n-grams is useful in the scope of our project because it is very hel
 
 ## Raga Asavari (Hindustani) / Natabhairavi (Carnatic)
 
-![Asavari Frequency](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari2.png =40x40)
+![Asavari Frequency](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari2.png | width=50)
 ![Asavari Bi/Trigram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari1.png)
 ![Asavari Chromagram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari3.png)
 
