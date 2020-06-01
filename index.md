@@ -5,15 +5,15 @@ tagline: Quantifying and Analyzing Ragas in Indian Classical Music
 description: Capstone proj
 ---
 # Background
-Indian Classical music contains two primary divisions - North Indian Classical (Hindustani), and South Indian Classical (Carnatic). While both styles have their fundamental differences, the underlying structure of styles can be captured in a raga/raag/ragam. A raga is defined as “a pattern of notes having characteristic intervals, rhythms, and embellishments, used as a basis for improvisation.” A raga can be compared to a type of scale in Western classical music. Though Western classical music does not have a direct equivalent to this concept, a raga is somewhat comparable to certain scales, such as a natural harmonic minor or a major scale. Every song has a raga that it is set to. 
+Indian Classical music contains two primary divisions - North Indian Classical (*Hindustani*), and South Indian Classical (*Carnatic*). While both styles have their fundamental differences, the underlying structure of styles can be captured in a *raga*. A raga is defined as “a pattern of notes having characteristic intervals, rhythms, and embellishments, used as a basis for improvisation.” A raga can be compared to a type of scale in Western classical music. Though Western classical music does not have a direct equivalent to this concept, a raga is somewhat comparable to certain scales, such as a natural harmonic minor or a major scale. Every song has a raga that it is set to. For example, the Hindustani raga "Kafi" and the Western classical "Dorian" scale have the same note structure: C, D, D#, F, G, A, A# . 
 
-For example, the Hindustani raga "Kafi" and the Western classical "Dorian" scale have the same note structure: C, D, D#, F, G, A, A# . 
-
-- [Dorian scale](audio&images/dorianpiano.mp3)
-- [Kafi raga](audio&images/KafiArohAvroh.mp3) 
+- [Listen to the Dorian scale](audio&images/dorianpiano.mp3)
+- [Listen to the Kafi scale](audio&images/KafiArohAvroh.mp3) 
 
 
-Our goal with this project is to quantify ragas in a way that we can then build a raga identification tool. This tool would be able to “listen” to an audio clip and be able to identify the raga that the song is set to. It would mimic what seasoned listeners of Indian classical music do already: try to identify a raga while listening to music. By quantifying the features of a ragam, we will attempt to build a raga identification classifier. We will be analyzing the 10 main ragas of Hindustani/Carnatic music:
+Our goal with this project is to show the quantifiable differences between ragas and to use those differences to build a raga identification tool. This tool would be able to “listen” to an audio clip and be able to classifiy the raga that the song is set to. It would mimic what seasoned listeners of Indian classical music do already: try to identify a raga while listening to music.
+
+We will be analyzing the 10 main ragas of Hindustani/Carnatic music:
 - Asavari (Hindustani)/ Natabhairavi (Carnatic)
 - Bilawal / Dheerashankarabharanam
 - Bhairav / Mayamalavagowlai
@@ -27,14 +27,13 @@ Our goal with this project is to quantify ragas in a way that we can then build 
 
 <img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/ConcertImage.jpeg" height="400" width="650" /> ![]() 
 
-*A classical music concert.* 
+*An Indian classical concert.* 
 
 
 # Data Cleaning
-Indian classical music has a huge number of Ragas (Carnatic alone has upward of 30,000 ragas). Given the time and resources currently available to us, it would be impossible to incorporate each of those ragas into our analysis. Thus, we are focusing on 10 major ragas, thaats. Thaats are unique because each of them have the same notes in the ascending and descending scale and are not “missing” any notes (both ascending and descending scale contain the full 7 notes). While the ragas that we picked are just a starting point, they are also important and influential ragas in and of themselves (every Hindustani raga is a derivative of one of these 10 thaats). 
+Once we narrowed down which ragas we would include in our analysis, we picked songs that are set to those ragas. Since these songs came from our personal collection, which includes mostly violin and vocal music, we used almost every song that we had that was set to the appropriate raga. 
 
-Once we narrowed down which ragas we would include in our analysis, we picked songs that were set to those ragas. Since these songs came from our personal collection, which includes mostly violin and vocal music, we used almost every song that we had that was set to the appropriate raga. 
-In Indian classical music, each artist plays in a specific sruthi, which is a pitch that the first note in the scale of the raga (sa) is played from. To make sure we could correctly analyze the difference between multiple songs, we identified what pitch each song was in and shifted the pitch of every song to be in C Major. We also chunked each of our songs to be 45 seconds in length so that later in our analysis, we could more accurately extract notes from them. We then loaded this information (encoded as an audio time-series array) into a csv for further use.
+In Indian classical music, each artist plays in a specific *sruthi*, which is a pitch that the first note in the scale of the raga (*sa*) is played from. To make sure we could correctly analyze the difference between multiple songs, we identified what pitch each song was in and shifted the pitch of every song to be in C. We also chunked each of our songs to be 45 seconds in length so that later in our analysis, we could more accurately extract notes from them. We then loaded this information (encoded as an audio time-series array) into a csv for further use.
 
 
 # Feature Extraction & Analysis
@@ -48,12 +47,13 @@ Our analysis attempts to show the quantitative differences between each of the 1
 The second part of our analysis will look at a sequence of notes taken from the clearest clip from each raga and will look at the most frequently occurring bigrams and trigrams. We will then compare these bigram and trigram frequencies with phrases that we know to be common in each raga and assess the accuracy of this quantification method. 
 
 ## Note Extraction
-Our note frequencies for each raga were derived from the Python package librosa's chromagram method. The chromagram method uses a Short-time Fourier Transform.
+Our note frequencies for each raga were derived from the Python package librosa's chromagram method. The chromagram method uses a Short-time Fourier Transform to identify the notes being played from the audio stream. 
 
 Given an audio time-series array, this method will assess how the pitch content of the time series is distributed over the twelve chroma bands, or pitches. After normalizing the pitches so all of the audio clips started in C, we extracted the sequence of notes from the chromagram. Librosa’s chromagrams, however, calculate 43 notes for every 1 second of audio provided. However when analyzing a sequence of notes, unlike when analyzing note frequency in general, it was really important that we minimized any notes that were played by accident or were incorrectly picked up by librosa (noise, quite literally). So, in order to minimize noise, we took the most-played note per second (the mode of every 43 notes). Looking at the arrays that generated the chromagram, we were able to isolate the loudest notes played in each second, based on its decibel value, and took the mode of that. Once we had a cohesive sequence of notes, we were able to determine the frequency with which each note of the C major scale was played or sung in any particular raga. This is important because when taking the top 7 most frequently played/sung notes, we were able to identify what the scale of a raga is with a good level of accuracy.
 
 
 <img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariChrom.png" height="300" width="900" /> ![]() 
+
 *An example of a chromagram generated from an audio clip from raga Asavari*
 
 
