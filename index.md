@@ -55,7 +55,7 @@ Our note frequencies for each raga were derived from the Python package librosa'
 Given an audio time-series array, this method will assess how the pitch content of the time series is distributed over the twelve chroma bands, or pitches. After normalizing the pitches so all of the audio clips started in C, we extracted the sequence of notes from the chromagram. Librosa’s chromagrams, however, calculate 43 notes for every 1 second of audio provided. However when analyzing a sequence of notes, unlike when analyzing note frequency in general, it was really important that we minimized any notes that were played by accident or were incorrectly picked up by librosa (noise, quite literally). So, in order to minimize noise, we took the most-played note per second (the mode of every 43 notes). Looking at the arrays that generated the chromagram, we were able to isolate the loudest notes played in each second, based on its decibel value, and took the mode of that. Once we had a cohesive sequence of notes, we were able to determine the frequency with which each note of the C major scale was played or sung in any particular raga. This is important because when taking the top 7 most frequently played/sung notes, we were able to identify what the scale of a raga is with a good level of accuracy.
 
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariChrom.png align="center" height="300" width="800" ></a>
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariChrom.png align="center" height="300" width="900" ></a>
 
 *An example of a chromagram generated from an audio clip from raga Asavari*
 
