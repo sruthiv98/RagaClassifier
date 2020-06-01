@@ -41,8 +41,8 @@ In Indian classical music, each artist plays in a specific sruthi, which is a pi
 # Analysis : Background
 Thaat To Scale: 
 
-![Thaat To Scale](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/thaattoscale.jpeg)
 
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/thaattoscale.jpeg  align="center" height="400" width="650" ></a>
 
 
 Our analysis attempts to show the quantitative differences between each of the 10 ragas with starting ideas on how we may go on to use these differences when building a classifier. We aim to do this in two parts: the first will focus on the frequency of notes in each raga and will discuss whether these note frequencies are expected given the raga or whether it is not. 
@@ -50,23 +50,33 @@ Our analysis attempts to show the quantitative differences between each of the 1
 The second part of our analysis will look at a sequence of notes taken from the clearest clip from each raga and will look at the most frequently occurring bigrams and trigrams. We will then compare these bigram and trigram frequencies with phrases that we know to be common in each raga and assess the accuracy of this quantification method. 
 
 ## Part 1: Note Frequencies
-Our note frequencies for each raga were derived from the Python package librosa’s chromagram method. Given an audio time-series array, this method will assess how the pitch content of the time series is distributed over the twelve chroma bands, or pitches. 
+Our note frequencies for each raga were derived from the Python package librosa’s chromagram method. In order to normalize our values and to make sure we accounted for artistic variation, we found the frequency of each note that was played for each clip. We then took the average of the frequency per note over all the clips and used that for our final note frequency value. In our visualizations, we display the top 7 most frequent notes. Ideally, these 7 notes would match exactly with the scale of every raga. We repeated this process for every raga. 
 
-Using a chromagram, we were able to extract which notes were played in each clip. Since a chromagram is color-coded, we extracted just the notes that were color-coded as the “loudest” in the song. In order to normalize our values and to make sure we accounted for artistic variation, we found the frequency of each note that was played for each clip. We then took the average of the frequency per note over all the clips and used that for our final note frequency value. In our visualizations, we display the top 7 most frequent notes. Ideally, these 7 notes would match exactly with the scale of every raga. We repeated this process for every raga. 
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariNoteFreq.jpeg  align="center" height="350" width="500" ></a>
+
+
+*The frequency of occurance for the top 7 most occuring notes in Asavari* 
 
 ## Part 2: Bigram/Trigram Analysis
-After normalizing the pitches so all of the audio clips started in C, we extracted the sequence of notes from the chromagram, following the process we used to extract notes to calculate note frequencies. Librosa’s chromagrams, however, calculate 43 notes for every 1 second of audio provided. However when analyzing a sequence of notes, unlike when analyzing note frequency in general, it was really important that we minimized any notes that were played by accident or were incorrectly picked up by librosa (noise, quite literally).  So, in order to minimize noise, we took the most-played note per second (the mode of every 43 notes). 
+After normalizing the pitches so all of the audio clips started in C, we extracted the sequence of notes from the chromagram, following the process we used to extract notes to calculate note frequencies.  
+
 Once we had our sequence of notes, we removed consecutive duplicates to prevent error while calculating n-grams. This was specifically to prevent n-gram calculation from including consecutive notes because this does not provide very much information about the patterns within the raga. For example, an artist holding the note sa (C) would result in many of the most frequent bi-grams being just a note that was consecutively held. 
+
 Calculating n-grams is useful in the scope of our project because it is very helpful in the quantification of ragas. Every raga has phrases (a sequence of notes) that form the identity of the raga. It is often after hearing one of these phrases that a listener is able to identify the raga of a song. Doing an n-gram analysis of a note sequence is a computational replication of the raga-identification method that advanced listeners use. 
- After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
+
+After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
+
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg  align="center" height="350" width="500" ></a>
+
+* The most frequently occuring bigrams in Asavari *
+
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg  align="center" height="350" width="500" ></a>
 
 
 # Analysis: Ragas
 
 ## Raga Asavari (Hindustani) / Natabhairavi (Carnatic)
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari2.png  align="center" height="350" width="500" ></a>
-![Asavari Bi/Trigram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari1.png)
-![Asavari Chromagram](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/Asavari3.png)
+
 
 The Asavari scale in swaras (Indian classical notes) is S R g M P d n S. In Western classical notes, in the C Major pitch, this would be C D D# F G G# A# C. As can be seen by our frequency visualization, the note that occurs with the highest frequency is G#, or the swara dha. This fits with our understanding of the raga because the main note (known as the vadi) of Asavari is dha (G#). 
 
