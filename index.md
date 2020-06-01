@@ -25,6 +25,9 @@ Our goal with this project is to quantify ragas in a way that we can then build 
 - Poorvi / Kamarvardhani
 - Todi / Shubhapantuvarali
 
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/ConcertImage.jpeg  align="center" height="400" width="600" ></a>
+
+
 # Data Cleaning
 Indian classical music has a huge number of Ragas (Carnatic alone has upward of 30,000 ragas). Given the time and resources currently available to us, it would be impossible to incorporate each of those ragas into our analysis. Thus, we are focusing on 10 major ragas, thaats. Thaats are unique because each of them have the same notes in the ascending and descending scale and are not “missing” any notes (both ascending and descending scale contain the full 7 notes). While the ragas that we picked are just a starting point, they are also important and influential ragas in and of themselves (every Hindustani raga is a derivative of one of these 10 thaats). 
 
