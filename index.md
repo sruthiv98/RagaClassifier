@@ -79,11 +79,11 @@ After removing these consecutive duplicates, we calculated the n-grams in our se
 
 <a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg  align="center" height="350" width="450" ></a>
 
-*The most frequently occuring bigrams in Asavari *
+*The most frequently occuring bigrams in Asavari*
 
 <a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariTri.jpeg  align="center" height="350" width="450" ></a>
 
-*The most frequently occuring trigrams in Asavari *
+*The most frequently occuring trigrams in Asavari*
 
 
 
