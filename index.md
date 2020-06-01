@@ -98,9 +98,9 @@ Once these features were extracted we were able to process them into features th
 # Results
 We believe our results are still in the early stages, but when developed further, could be extremely impactful and applicable to the broader Indian Classical music community. Our project tackles a problem that has existed in the community for quite some time. With a model that can retain its accuracy with a wider variety of ragas, we believe that it would be an extremely useful tool for every Indian classical music listener.
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/results.png  align="center" height="350" width="500" ></a>
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/results.png  align="center" height="350" width="550" ></a>
 
 After training several models using 70% of our cleaned audio data and testing with the remaining 30%, we decided to use the Naive Bayes classifier as our final model. With this classifier, we achieved 84.2% accuracy on the test set.
 
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/exampleimage2.jpg  align="center" height="350" width="500" ></a>
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/exampleimage2.jpg  align="center" height="350" width="550" ></a>
