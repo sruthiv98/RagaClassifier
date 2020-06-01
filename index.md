@@ -42,7 +42,7 @@ In Indian classical music, each artist plays in a specific sruthi, which is a pi
 Thaat To Scale: 
 
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/images/thaattoscale.jpeg  align="center" height="400" width="650" ></a>
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/thaattoscale.jpeg  align="center" height="300" width="300" ></a>
 
 
 Our analysis attempts to show the quantitative differences between each of the 10 ragas with starting ideas on how we may go on to use these differences when building a classifier. We aim to do this in two parts: the first will focus on the frequency of notes in each raga and will discuss whether these note frequencies are expected given the raga or whether it is not. 
