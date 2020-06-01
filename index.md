@@ -102,5 +102,9 @@ We believe our results are still in the early stages, but when developed further
 
 After training several models using 70% of our cleaned audio data and testing with the remaining 30%, we decided to use the Naive Bayes classifier as our final model. With this classifier, we achieved 84.2% accuracy on the test set.
 
+# Future Work
+While this project analyzed the top 10 ragas in Indian Classical Music, further work can be done to we extend our analysis to the 300+ existing ragas. We also hope to incorporate mood analysis and research with neural nets, so that we can rely on features beyond just note extraction and frequency. Mood analysis would be particularly useful in classification because two ragas can have the same exact scale, but differ in mood (or the way the notes are played), and therefore differ in classification. 
+
+Additional research would also include rhythm/tone/timbre analysis. There is currently a lot of work being done in the music research field in regards to rhythm and timbre specifically. 
 
 <a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/exampleimage2.jpg  align="center" height="350" width="550" ></a>
