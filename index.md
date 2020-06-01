@@ -38,7 +38,7 @@ Once we narrowed down which ragas we would include in our analysis, we picked so
 In Indian classical music, each artist plays in a specific sruthi, which is a pitch that the first note in the scale of the raga (sa) is played from. To make sure we could correctly analyze the difference between multiple songs, we identified what pitch each song was in and shifted the pitch of every song to be in C Major. We also chunked each of our songs to be 45 seconds in length so that later in our analysis, we could more accurately extract notes from them. We then loaded this information (encoded as an audio time-series array) into a csv for further use.
 
 
-# Analysis : Background
+# Feature Extraction & Analysis
 Thaat To Scale: 
 
 
@@ -48,6 +48,17 @@ Thaat To Scale:
 Our analysis attempts to show the quantitative differences between each of the 10 ragas with starting ideas on how we may go on to use these differences when building a classifier. We aim to do this in two parts: the first will focus on the frequency of notes in each raga and will discuss whether these note frequencies are expected given the raga or whether it is not. 
 
 The second part of our analysis will look at a sequence of notes taken from the clearest clip from each raga and will look at the most frequently occurring bigrams and trigrams. We will then compare these bigram and trigram frequencies with phrases that we know to be common in each raga and assess the accuracy of this quantification method. 
+
+## Note Extraction
+Our note frequencies for each raga were derived from the Python package librosa's chromagram method. The chromagram method uses a Short-time Fourier Transform.
+
+Given an audio time-series array, this method will assess how the pitch content of the time series is distributed over the twelve chroma bands, or pitches. After normalizing the pitches so all of the audio clips started in C, we extracted the sequence of notes from the chromagram. Librosa’s chromagrams, however, calculate 43 notes for every 1 second of audio provided. However when analyzing a sequence of notes, unlike when analyzing note frequency in general, it was really important that we minimized any notes that were played by accident or were incorrectly picked up by librosa (noise, quite literally). So, in order to minimize noise, we took the most-played note per second (the mode of every 43 notes). Looking at the arrays that generated the chromagram, we were able to isolate the loudest notes played in each second, based on its decibel value, and took the mode of that. Once we had a cohesive sequence of notes, we were able to determine the frequency with which each note of the C major scale was played or sung in any particular raga. This is important because when taking the top 7 most frequently played/sung notes, we were able to identify what the scale of a raga is with a good level of accuracy.
+
+
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariChrom.png align="center" height="350" width="600" ></a>
+
+*An example of a chromagram generated from an audio clip from raga Asavari*
+
 
 ## Part 1: Note Frequencies
 Our note frequencies for each raga were derived from the Python package librosa’s chromagram method. In order to normalize our values and to make sure we accounted for artistic variation, we found the frequency of each note that was played for each clip. We then took the average of the frequency per note over all the clips and used that for our final note frequency value. In our visualizations, we display the top 7 most frequent notes. Ideally, these 7 notes would match exactly with the scale of every raga. We repeated this process for every raga. 
@@ -70,27 +81,14 @@ After removing these consecutive duplicates, we calculated the n-grams in our se
 
 * The most frequently occuring bigrams in Asavari *
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg  align="center" height="350" width="500" ></a>
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariTri.jpeg  align="center" height="350" width="500" ></a>
+
+* The most frequently occuring trigrams in Asavari *
 
 
-# Analysis: Ragas
-
-## Raga Asavari (Hindustani) / Natabhairavi (Carnatic)
 
 
-The Asavari scale in swaras (Indian classical notes) is S R g M P d n S. In Western classical notes, in the C Major pitch, this would be C D D# F G G# A# C. As can be seen by our frequency visualization, the note that occurs with the highest frequency is G#, or the swara dha. This fits with our understanding of the raga because the main note (known as the vadi) of Asavari is dha (G#). 
-
-Looking at the frequencies of the bigrams and trigrams, we can observe whether they match the pakad, or phrases that capture the nature of the raga. If we observe the top bigrams and trigrams, we can see the prominence of D, C, D which translates to the swaras ri, sa, ri, which is an important phrase in this raga. 
-
-
-# Feature Extraction
-Our note frequencies for each raga were derived from the Python package librosa's chromagram method. The chromagram method uses a Short-time Fourier Transform. “The short-time Fourier transform (STFT) (Wikipedia; FMP, p. 53) is obtained by computing the Fourier transform for successive frames in a signal.”1 
-
-Given an audio time-series array, this method will assess how the pitch content of the time series is distributed over the twelve chroma bands, or pitches.  After normalizing the pitches so all of the audio clips started in C, we extracted the sequence of notes from the chromagram, following the process we used to extract notes to calculate note frequencies. Librosa’s chromagrams, however, calculate 43 notes for every 1 second of audio provided. However when analyzing a sequence of notes, unlike when analyzing note frequency in general, it was really important that we minimized any notes that were played by accident or were incorrectly picked up by librosa (noise, quite literally).  So, in order to minimize noise, we took the most-played note per second (the mode of every 43 notes). Looking at the arrays that generated the chromagram, we were able to isolate the loudest notes played in each second, based on its decibel value, and took the mode of that. Once we had a cohesive sequence of notes, we were able to determine the frequency with which each note of the  C major scale was played or sung in any particular raga. This is important because when taking the top 7 most frequently played/sung notes, we were able to identify what the scale of a raga is with a good level of accuracy. 
-
-We were also able to use this sequence of notes to generate bigrams and trigrams that are most common in each raga, which gives an idea of which musical “phrases” are integral to that raga. Once we had our sequence of notes, we removed consecutive duplicates to prevent error while calculating n-grams. This was specifically to prevent n-gram calculation from including consecutive notes because this does not provide very much information about the patterns within the raga. For example, an artist holding the note sa (C) would result in many of the most frequent bi-grams being just a note that was consecutively held. 
-
-Calculating n-grams is useful in the scope of our project because it is very helpful in the quantification of ragas. Every raga has phrases (a sequence of notes) that form the identity of the raga. It is often after hearing one of these phrases that a listener is able to identify the raga of a song. Doing an n-gram analysis of a note sequence is a computational replication of the raga-identification method that advanced listeners use.
+After extracting these features, specifically frequency of note occurrences, and bigrams/trigrams, we were able to start model training.
 
 # Model 
 
@@ -100,4 +98,9 @@ Once these features were extracted we were able to process them into features th
 # Results
 We believe our results are still in the early stages, but when developed further, could be extremely impactful and applicable to the broader Indian Classical music community. Our project tackles a problem that has existed in the community for quite some time. With a model that can retain its accuracy with a wider variety of ragas, we believe that it would be an extremely useful tool for every Indian classical music listener.
 
-After training several models using 70% of our cleaned audio data and testing with the remaining 30%, we decided to use the Naive Bayesc classifier as our final model. With this classifier, we achieved 84.2% accuracy on the test set.
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/results.png  align="center" height="350" width="500" ></a>
+
+After training several models using 70% of our cleaned audio data and testing with the remaining 30%, we decided to use the Naive Bayes classifier as our final model. With this classifier, we achieved 84.2% accuracy on the test set.
+
+
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/exampleimage2.jpg  align="center" height="350" width="500" ></a>
