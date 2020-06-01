@@ -25,8 +25,7 @@ Our goal with this project is to quantify ragas in a way that we can then build 
 - Poorvi / Kamarvardhani
 - Todi / Shubhapantuvarali
 
-<a href="url"><img src= gh-pages/audio%26images/ConcertImage.jpeg  align="center" height="400" width="650" ></a>
-
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/ConcertImage.jpeg" height="400" width="650" /> ![Concert Image](https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/ConcertImage.jpeg) 
 
 *A classical music concert.* 
 
