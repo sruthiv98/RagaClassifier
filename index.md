@@ -10,7 +10,7 @@ Indian Classical music contains two primary divisions - North Indian Classical (
 SHOW AUDIO EXAMPLE OF KAFI
 For example, the Hindustani raga "Kafi" and the Western classical "Dorian" scale have the same note structure: C, D, D#, F, G, A, A# . 
 
-- Dorian: [Dorian scale](/audio&images/kafi piano (online-audio-converter.com).mp3)
+- Dorian: [Dorian scale](audio&images/dorianpiano.mp3)
 - Kafi: 
 
 
