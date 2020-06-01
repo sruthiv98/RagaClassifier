@@ -77,13 +77,13 @@ Calculating n-grams is useful in the scope of our project because it is very hel
 
 After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg  align="center" height="350" width="500" ></a>
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg  align="center" height="350" width="450" ></a>
 
-* The most frequently occuring bigrams in Asavari *
+*The most frequently occuring bigrams in Asavari *
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariTri.jpeg  align="center" height="350" width="500" ></a>
+<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariTri.jpeg  align="center" height="350" width="450" ></a>
 
-* The most frequently occuring trigrams in Asavari *
+*The most frequently occuring trigrams in Asavari *
 
 
 
