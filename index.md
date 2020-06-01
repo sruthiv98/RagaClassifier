@@ -7,17 +7,13 @@ description: Capstone proj
 # Background
 Indian Classical music contains two primary divisions - North Indian Classical (Hindustani), and South Indian Classical (Carnatic). While both styles have their fundamental differences, the underlying structure of styles can be captured in a raga/raag/ragam. A raga is defined as “a pattern of notes having characteristic intervals, rhythms, and embellishments, used as a basis for improvisation.” A raga can be compared to a type of scale in Western classical music. Though Western classical music does not have a direct equivalent to this concept, a raga is somewhat comparable to certain scales, such as a natural harmonic minor or a major scale. Every song has a raga that it is set to. 
 
-SHOW AUDIO EXAMPLE OF KAFI
 For example, the Hindustani raga "Kafi" and the Western classical "Dorian" scale have the same note structure: C, D, D#, F, G, A, A# . 
 
 - [Dorian scale](audio&images/dorianpiano.mp3)
 - [Kafi raga](audio&images/KafiArohAvroh.mp3) 
 
 
-
-
-
-Our goal with this project is to quantify ragas in a way that we can then build a raga identification tool. This tool would be able to “listen” to an audio clip and be able to identify the raga that the song is set to. It would mimic what seasoned listeners of Indian classical music do already: try to identify a raga while listening to music. By quantifying the features of a ragam, we will attempt to build a raga identification classifier. However, as noted by those who have attempted this in the past, “quantifying raga similarity becomes extremely challenging as it demands assimilation of both intrinsic (viz., notes, tempo) and extrinsic (viz. raga singing time, emotions conveyed) properties of ragas.” (Mishra 1) To manage the scope of this project with the time we have, we will build this tool to be functional for 10 prominent Hindustani/Carnatic ragas. These 10 prominent ragas are known as thaats. These are known as: 
+Our goal with this project is to quantify ragas in a way that we can then build a raga identification tool. This tool would be able to “listen” to an audio clip and be able to identify the raga that the song is set to. It would mimic what seasoned listeners of Indian classical music do already: try to identify a raga while listening to music. By quantifying the features of a ragam, we will attempt to build a raga identification classifier. We will be analyzing the 10 main ragas of Hindustani/Carnatic music:
 - Asavari (Hindustani)/ Natabhairavi (Carnatic)
 - Bilawal / Dheerashankarabharanam
 - Bhairav / Mayamalavagowlai
