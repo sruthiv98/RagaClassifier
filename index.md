@@ -40,8 +40,7 @@ In Indian classical music, each artist plays in a specific sruthi, which is a pi
 # Feature Extraction & Analysis
 Thaat To Scale: 
 
-
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/thaattoscale.jpeg  align="center" height="300" width="350" ></a>
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/thaattoscale.jpeg" height="300" width="350" /> ![]() 
 
 
 Our analysis attempts to show the quantitative differences between each of the 10 ragas with starting ideas on how we may go on to use these differences when building a classifier. We aim to do this in two parts: the first will focus on the frequency of notes in each raga and will discuss whether these note frequencies are expected given the raga or whether it is not. 
@@ -54,15 +53,14 @@ Our note frequencies for each raga were derived from the Python package librosa'
 Given an audio time-series array, this method will assess how the pitch content of the time series is distributed over the twelve chroma bands, or pitches. After normalizing the pitches so all of the audio clips started in C, we extracted the sequence of notes from the chromagram. Librosa’s chromagrams, however, calculate 43 notes for every 1 second of audio provided. However when analyzing a sequence of notes, unlike when analyzing note frequency in general, it was really important that we minimized any notes that were played by accident or were incorrectly picked up by librosa (noise, quite literally). So, in order to minimize noise, we took the most-played note per second (the mode of every 43 notes). Looking at the arrays that generated the chromagram, we were able to isolate the loudest notes played in each second, based on its decibel value, and took the mode of that. Once we had a cohesive sequence of notes, we were able to determine the frequency with which each note of the C major scale was played or sung in any particular raga. This is important because when taking the top 7 most frequently played/sung notes, we were able to identify what the scale of a raga is with a good level of accuracy.
 
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariChrom.png align="center" height="300" width="900" ></a>
-
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariChrom.png" height="300" width="900" /> ![]() 
 *An example of a chromagram generated from an audio clip from raga Asavari*
 
 
 ## Part 1: Note Frequencies
 Our note frequencies for each raga were derived from the Python package librosa’s chromagram method. In order to normalize our values and to make sure we accounted for artistic variation, we found the frequency of each note that was played for each clip. We then took the average of the frequency per note over all the clips and used that for our final note frequency value. In our visualizations, we display the top 7 most frequent notes. Ideally, these 7 notes would match exactly with the scale of every raga. We repeated this process for every raga. 
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariNoteFreq.jpeg  align="center" height="350" width="500" ></a>
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariNoteFreq.jpeg" height="350" width="500" /> ![]() 
 
 
 *The frequency of occurance for the top 7 most occuring notes in Asavari* 
@@ -76,15 +74,15 @@ Calculating n-grams is useful in the scope of our project because it is very hel
 
 After removing these consecutive duplicates, we calculated the n-grams in our sequence of notes. Our analysis focuses mostly on the most common bigrams and trigrams found in each raga.
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg  align="center" height="350" width="450" ></a>
+
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariBigram.jpeg" height="350" width="450" /> ![]()
 
 *The most frequently occuring bigrams in Asavari*
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariTri.jpeg  align="center" height="350" width="450" ></a>
+
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/AsavariTri.jpeg" height="350" width="450" /> ![]()
 
 *The most frequently occuring trigrams in Asavari*
-
-
 
 
 After extracting these features, specifically frequency of note occurrences, and bigrams/trigrams, we were able to start model training.
@@ -97,7 +95,10 @@ Once these features were extracted we were able to process them into features th
 # Results
 We believe our results are still in the early stages, but when developed further, could be extremely impactful and applicable to the broader Indian Classical music community. Our project tackles a problem that has existed in the community for quite some time. With a model that can retain its accuracy with a wider variety of ragas, we believe that it would be an extremely useful tool for every Indian classical music listener.
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/results.png  align="center" height="350" width="550" ></a>
+
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/results.png" height="350" width="550" /> ![]()
+
+*Classification accuracy for ten different ragas*
 
 After training several models using 70% of our cleaned audio data and testing with the remaining 30%, we decided to use the Naive Bayes classifier as our final model. With this classifier, we achieved 84.2% accuracy on the test set.
 
@@ -106,4 +107,4 @@ While this project analyzed the top 10 ragas in Indian Classical Music, further 
 
 Additional research would also include rhythm/tone/timbre analysis. There is currently a lot of work being done in the music research field in regards to rhythm and timbre specifically. 
 
-<a href="url"><img src=https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/exampleimage2.jpg  align="center" height="350" width="550" ></a>
+<img src="https://raw.githubusercontent.com/sruthiv98/RagaClassifier/gh-pages/audio%26images/exampleimage2.jpg" height="350" width="550" /> ![]()
