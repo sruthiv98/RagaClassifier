@@ -8,7 +8,11 @@ description: Capstone proj
 Indian Classical music contains two primary divisions - North Indian Classical (Hindustani), and South Indian Classical (Carnatic). While both styles have their fundamental differences, the underlying structure of styles can be captured in a raga/raag/ragam. A raga is defined as “a pattern of notes having characteristic intervals, rhythms, and embellishments, used as a basis for improvisation.” A raga can be compared to a type of scale in Western classical music. Though Western classical music does not have a direct equivalent to this concept, a raga is somewhat comparable to certain scales, such as a natural harmonic minor or a major scale. Every song has a raga that it is set to. 
 
 SHOW AUDIO EXAMPLE OF KAFI
-For example, the Hindustani raga "Kafi" and the Western classical "Dorian" scale have the same note structure: C, D, D#, F, G, A, A#
+For example, the Hindustani raga "Kafi" and the Western classical "Dorian" scale have the same note structure: C, D, D#, F, G, A, A# . 
+
+- Dorian: [Dorian scale](/audio&images/kafi piano (online-audio-converter.com).mp3)
+- Kafi: 
+
 
 
 
