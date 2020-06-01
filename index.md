@@ -92,7 +92,7 @@ After extracting these features, specifically frequency of note occurrences, and
 
 # Model 
 
-Once these features were extracted we were able to process them into features that are usable within a model. This involved using a multi-label binarizer to one-hot encode the scales we had generated with the top 7 most frequently played/sung notes in each raga. We multiplied these one-hot encodings with the frequency with which each of these notes were played or sung. We then used these features to classify an “unseen” dataset with a Naive Bayes classifier.
+Once these features were extracted we were able to process them into features that are usable within a model. This involved using a multi-label binarizer to one-hot encode the scales we had generated with the top 7 most frequently played/sung notes in each raga. We multiplied these one-hot encodings with the frequency with which each of these notes were played or sung. We then used these features to classify an “unseen” dataset with a Naive Bayes classifier. We trained our model on 19.5 minutes of training data and 10.5 minutes of testing data per raga. 
 
 
 # Results
