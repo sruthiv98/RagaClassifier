@@ -61,3 +61,12 @@ The Asavari scale in swaras (Indian classical notes) is S R g M P d n S. In West
 Looking at the frequencies of the bigrams and trigrams, we can observe whether they match the pakad, or phrases that capture the nature of the raga. If we observe the top bigrams and trigrams, we can see the prominence of D, C, D which translates to the swaras ri, sa, ri, which is an important phrase in this raga. 
 
 
+# Model 
+
+Once these features were extracted we were able to process them into features that are usable within a model. This involved using a multi-label binarizer to one-hot encode the scales we had generated with the top 7 most frequently played/sung notes in each raga. We multiplied these one-hot encodings with the frequency with which each of these notes were played or sung. We then used these features to classify an “unseen” dataset with a Naive Bayes classifier.
+
+
+# Results
+We believe our results are still in the early stages, but when developed further, could be extremely impactful and applicable to the broader Indian Classical music community. Our project tackles a problem that has existed in the community for quite some time. With a model that can retain its accuracy with a wider variety of ragas, we believe that it would be an extremely useful tool for every Indian classical music listener.
+
+After training several models using 70% of our cleaned audio data and testing with the remaining 30%, we decided to use the Naive Bayesc classifier as our final model. With this classifier, we achieved 84.2% accuracy on the test set.
