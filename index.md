@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Raga Classification
-tagline: Quantifying and Analyzing Ragas in Indian Classical Music
+title: Name That Raga
+tagline: An Analysis and Classification of Indian Classical Music
 description: Capstone proj
 ---
 # Background
